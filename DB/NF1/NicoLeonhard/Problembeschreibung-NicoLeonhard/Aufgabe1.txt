@@ -1,0 +1,6 @@
+Problembeschreibung:
+
+Saschas Idee das System in eine Datenbank zu realisieren ist keine Schlechte Idee.
+Aber Sascha mach mit seinem vorschlag evt. eine erleichterung aber dennoch Arbeit denn bei weiteren Medikamenten wird es schwieriger das zu ealisieren,
+denn er hat eine Tabelle gemacht statt es in mehrere zu spalten, welche mehr vorteile hätte.
+

@@ -1,0 +1,64 @@
+delete from t_rechnung;
+delete from t_auftrag;
+delete from t_bestellung;
+delete from t_ersatzteil;
+delete from t_jacht;
+delete from t_jachttyp;
+delete from t_lieferant;
+delete from t_kunde;
+delete from t_serviceangebot;
+
+insert into t_rechnung
+	(rechnungNR, produktbezeichnung, personalpreis, materialpreis, gespreis, Datum)
+values	(1, "motor",1800 , 5200, 8000, "2019-01-21"),
+	 (2, "luft-erfrischer",7997.01, 2.99, 8000, "2019-01-21"),
+        (3, "Segel",7440 , 560, 8000, "2019-01-21");
+
+insert into t_lieferant
+	(lieferantenNR,firmennamen,ansprechperson,Tel,str,strNR,ort,Plz)
+values	(1010,"möwenhunter","kevin pascal müller",021554156156,"Baumstr",12,"düsseldorf",40449),
+	(1015,"RedApple Boot","Karl Morales",021321321321,"apfelstr",2,"düsseldorf",40331),
+	(1020,"Schiff Tools","Herman Gaines",026546546546,"birnestr",42,"düsseldorf",40315);
+
+insert into t_ersatzteil
+	(ersatzteilNR,bezeichnung,zustand)
+values	(794792, "motor", "gebraucht"),
+	(704710, "motor", "neu"),
+	(485073, "steuerrad", "neu");
+
+insert into t_jachttyp
+	(typNr,bezeichnung)
+values	(859873, "Savvy-Storm"  ),
+	(904478, "Harbor-Crest" ),
+	(898201, "Fishy-Genii " );
+
+
+insert into t_jacht
+	(jachtbezeichnung,zustand,name,kennNr)
+values	("Benetti","Neu","Mustang",4266),
+	("Atrium","benutzt","Sleeping Bear",5289),
+	("Aviva","benutzt","Emerald Sea",3684);
+
+insert into t_kunde
+	(kundenNR,name,Vorname,Tel,Str,StrNr,Ort,Plz,gebdatum)
+values	(5,"Sankt","Robert",06772834471,"Koepenicker Str.", 21,"Niedertiefenbach", 56368, "2000-11-15" ),
+	(10,"Frey","Christina ",09192356168,"Ellmenreichstrasse",87,"Igensdorf",91338, "2000-12-1" ),
+        (15,"Maier","Muster",04252685168,"Karl-Liebknecht-Strasse",67,"Martfeld",27327, "1970-12-31");
+
+insert into t_serviceangebot
+	(ServiceNr,Tätigkeit,Kosten)
+values	(2, "lagern", 50),
+	(4, "säubern", 100),
+	(6, "reparatur", 150);
+
+insert into t_bestellung
+	(ersatzteilNR,lieferantenNR,anzahl,kosten,datumBestel,ankunftsDatum)
+values	(794792,1010,10,399.99,"2000-11-16","2022-11-16"),
+	(704710,1015,10,799.99,"2000-10-12","2022-10-12"),
+	(485073,1020,10,299.99,"2000-8-8","2022-8-8");
+
+insert into t_auftrag
+	(auftragNR,rechnungNR,serviceNR)
+values	(42000000,1,2),
+	(51000000,2,4),
+	(32000000,3,6);

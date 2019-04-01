@@ -1,0 +1,95 @@
+CREATE DATABASE IF NOT EXISTS deltamarina;
+use deltamarina;
+CREATE TABLE IF NOT EXISTS Kunde
+(
+   Vorname VARCHAR(250) NOT NULL,
+   Nachname VARCHAR(250) NOT NULL,
+   KontoNr INTEGER NOT NULL,
+   Adresse VARCHAR(250) NOT NULL,
+   Plz INTEGER NOT NULL,
+   Email VARCHAR(250) NOT NULL,
+   TelefonNr INTEGER NULL,
+   HandyNr INTEGER NOT NULL,
+   KundenNr INTEGER NOT NULL AUTO_INCREMENT,
+   PRIMARY KEY (KundenNr)
+);
+CREATE TABLE IF NOT EXISTS Auftrag
+(
+   AuftagsNr INTEGER NOT NULL  AUTO_INCREMENT,
+   AuftragsDatum DATE NOT NULL,
+   KundenNr INTEGER NOT NULL,
+   Reparatur BOOLEAN NOT NULL,
+   Winterlager BOOLEAN NOT NULL,
+   PRIMARY KEY (AuftagsNr),
+   FOREIGN KEY (KundenNr) REFERENCES Kunde(KundenNr)
+);
+CREATE TABLE IF NOT EXISTS Serviceangebote
+(
+   ServiceNr INTEGER NOT NULL AUTO_INCREMENT,
+   Reparatur BOOLEAN NOT NULL,
+   Winterlager BOOLEAN NOT NULL,
+   Service VARCHAR(250) NOT NULL,
+   KundenNr INTEGER NOT NULL,
+   AuftagsNr INTEGER NOT NULL,
+   PRIMARY KEY (ServiceNr),
+   FOREIGN KEY (KundenNr) REFERENCES Kunde(KundenNr),
+   FOREIGN KEY (AuftagsNr) REFERENCES Auftrag(AuftagsNr)
+);
+CREATE TABLE IF NOT EXISTS Jacht
+(
+   JachtNr INTEGER NOT NULL AUTO_INCREMENT ,
+   KundenNr INTEGER NOT NULL,
+   Farbe VARCHAR(250) NOT NULL,
+   Breite DOUBLE NOT NULL,
+   Groesse DOUBLE NOT NULL,
+   Laenge DOUBLE NOT NULL,
+   Gewicht DOUBLE NOT NULL,
+   PRIMARY KEY (JachtNr),
+   FOREIGN KEY (KundenNr) REFERENCES Kunde(KundenNr)
+   
+);
+CREATE TABLE IF NOT EXISTS Ersatzteile
+(
+   ErstazteilNr INTEGER NOT NULL AUTO_INCREMENT,
+   KundenNr INTEGER NOT NULL,
+   AuftagsNr INTEGER NOT NULL,
+   JachtNr INTEGER NOT NULL,
+   Ersatzteile VARCHAR(250) NOT NULL,
+   PRIMARY KEY (ErstazteilNr),
+   FOREIGN KEY (KundenNr) REFERENCES Kunde(KundenNr),
+   FOREIGN KEY (AuftagsNr) REFERENCES Auftrag(AuftagsNr),
+   FOREIGN KEY (JachtNr) REFERENCES Jacht(JachtNr)
+);
+CREATE TABLE IF NOT EXISTS Lieferant
+(
+   LieferantNr INTEGER NOT NULL AUTO_INCREMENT,
+   Firma VARCHAR(250) NOT NULL,
+   Adresse VARCHAR(250) NOT NULL,
+   Email VARCHAR(250) NOT NULL,
+   TelefonNr INTEGER NOT NULL,
+   PRIMARY KEY (LieferantNr)
+);
+CREATE TABLE IF NOT EXISTS Rechnung
+(
+   RechnungsNr INTEGER NOT NULL AUTO_INCREMENT,
+   Preis DOUBLE NOT NULL,
+   KundenNr INTEGER NOT NULL,
+   AuftagsNr INTEGER NOT NULL,
+   PRIMARY KEY (RechnungsNr),
+   FOREIGN KEY (KundenNr) REFERENCES Kunde(KundenNr),
+   FOREIGN KEY (AuftagsNr) REFERENCES Auftrag(AuftagsNr)
+);
+CREATE TABLE IF NOT EXISTS Bestellung
+(
+   BestellNr INTEGER NOT NULL AUTO_INCREMENT,
+   ErstazteilNr INTEGER NOT NULL,
+   KundenNr INTEGER NOT NULL,
+   AuftagsNr INTEGER NOT NULL,
+   JachtNr INTEGER NOT NULL,
+   LieferantNr INTEGER NOT NULL,
+   PRIMARY KEY (BestellNr),
+   FOREIGN KEY (ErstazteilNr) REFERENCES Ersatzteile(ErstazteilNr),
+   FOREIGN KEY (KundenNr) REFERENCES Kunde(KundenNr),
+   FOREIGN KEY (AuftagsNr) REFERENCES Auftrag(AuftagsNr),
+   FOREIGN KEY (JachtNr) REFERENCES Jacht(JachtNr)
+);

@@ -1,0 +1,3 @@
+SELECT Preis
+FROM `Rechnung`
+WHERE `Datum` LIKE `2017-02%`;

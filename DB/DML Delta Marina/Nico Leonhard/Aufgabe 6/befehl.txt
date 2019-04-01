@@ -1,0 +1,5 @@
+	select *, DATEDIFF(curdate(), (gebdatum)) 
+	AS Kundealter from t_kunde 
+	where name LIKE 'Ma%'
+	Group by Kundealter
+	ORDER BY Kundealter desc;

@@ -1,0 +1,7 @@
+SELECT * FROM t_kunde 
+WHERE  (gebdatum BETWEEN "1980-01-01" AND "2020-01-01");
+
+oder
+
+select name,Vorname,gebdatum from t_kunde
+where (gebdatum >= "1980-01-01");

@@ -1,0 +1,64 @@
+insert into Kunde
+set
+	Vorname="Rainer",
+ 	Name="Zufall",
+ 	Tel="01003-423834",
+ 	Str="Schicksalsweg",
+	StrNr="7",
+	Ort="dumhausen",
+	Plz="90001";
+
+insert into Ersatzteil
+set
+	ErsatzteilNr="1000",
+ 	Bezeichnung="Mast",
+ 	Zustand="Gebraucht";
+
+insert into Lieferant 
+set
+	LieferantenID="1232",	
+ 	NameFirma="DummiGMBH",
+ 	Ansprechpartner="welza",
+	Tel ="3531123456",
+	Str ="FLummiStr",
+	StrNr ="13",
+	Ort ="DummHausen",
+	Plz ="90002";
+
+insert into Bestellung
+set
+	LieferantenID="1232",	
+ 	ErsatzteilNr="1000",
+	Anzahl	="1",
+	Kosten ="99,99",
+	DatumBestel ="23.06.00",
+	AnkDatum ="26.06.00";
+ 
+insert into Jachttyp 
+set
+	TypNr="2",	
+ 	Bezeichnung="Motor";
+
+insert into Jacht 
+set
+	JachtID	="1525453",	
+ 	Zustand="Beschädigt";
+	Name="MSherbert",
+	KennNr="12567",
+	
+insert into Serviceangebot 
+set
+	ServiceNr="1001",	
+ 	Tätigkeit="Mastlegen";
+	Kosten="59,99";
+
+insert into Rechnung 
+set
+	RechnungNr="1001",	
+ 	Datum="27.06.00",
+	Preis="158,98";
+
+insert into Auftrag
+set
+	AuftragNr="1001";	
+	

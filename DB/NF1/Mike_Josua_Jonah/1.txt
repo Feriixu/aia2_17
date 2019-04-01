@@ -1,0 +1,6 @@
+﻿1.
+
+- schweres ändern der Daten
+- nur eine Tabelle
+- erschwerung des Suchens und Filterns von Daten
+- erschwerung des Erweiterns der Datenbank

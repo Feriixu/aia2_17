@@ -1,0 +1,100 @@
+CREATE DATABASE IF NOT EXISTS db_deltamarina;
+use db_deltamarina;
+
+CREATE TABLE IF NOT EXISTS Rechnung
+(
+	RechnungsID INTEGER AUTO_INCREMENT = 1000,
+	AuftagsID INTEGER,
+	Preis INTEGER,
+	PRIMARY KEY (RechnungsID),
+	FOREIGN KEY (AuftragsID)REFERENCES Auftrag (AuftagsID)
+);
+
+CREATE TABLE IF NOT EXISTS Auftrag
+(
+	AuftragsID INTEGER AUTO_INCREMENT,
+	RechnungsID INTEGER,
+	PRIMARY KEY (AuftragsID),
+	FOREIGN KEY (RechnungsID) REFERENCES Rechnung (RechnungsID)
+);
+
+
+CREATE TABLE IF NOT EXISTS Kunde
+(
+	KundenID INTEGER AUTO_INCREMENT = 1000000,
+	
+	Name VARCHAR(255) NOT NULL,
+	Vorname VARCHAR(255) NOT NULL,
+	Gebdat DATE NOT NULL,
+	Tel INTEGER NOT NULL,
+	CHECK(Tel >=0 A AND <=9),
+	Strasse VARCHAR(255) NOT NULL,
+	Hausnummer VARCHAR(255) NOT NULL,
+	PLZ INTEGER NOT NULL,
+	CHECK(PLZ >=0 A AND <=9),
+	AuftragsID INTEGER,
+	Email VARCHAR(255) NULL,
+	FOREIGN KEY (AuftragsID) REFERENCES Auftrag (AuftragsID)
+);
+
+
+CREATE TABLE IF NOT EXISTS Yacht
+(
+	YachtID INTEGER AUTO_INCREMENT = 1000,
+	Yname VARCHAR(255) NOT NULL,
+	Baujahr INTEGER NOT NULL,
+	AuftragsID INTEGER,
+	FOREIGN KEY (AuftragsID) REFERENCES Auftrag (AuftragsID),
+	FOREIGN KEY (KundenID) REFERENCES Kunde (KundenID)
+);
+
+
+CREATE TABLE IF NOT EXISTS Yachttyp
+(
+	YachttypID INTEGER AUTO_INCREMENT = 1000,
+	Segelyacht BOOLEAN NOT NULL,
+	Motoryacht BOOLEAN NOT NULL
+	FOREIGN KEY (YachtID) REFERENCES Yacht (YachtID)
+);
+
+CREATE TABLE IF NOT EXISTS Ersatzteil
+(
+	ErsatzteilName VARCHAR(255) NOT NULL,
+	ErsatzteilID INTEGER AUTO_INCREMENT = 1000,
+	PRIMARY KEY (ErsatzteilID)
+);
+
+CREATE TABLE IF NOT EXISTS Lieferantenbelegung
+(
+	ErsatzteilID INTEGER AUTO_INCREMENT,
+	LieferantenID INTEGER AUTO_INCREMENT,
+	PRIMARY KEY (ErsatzteilID),
+	PRIMARY KEY (LieferantenID),
+	FOREIGN KEY (ErsatzteilID) REFERENCES Ersatzteil (ErsatzteilID),
+	FOREIGN KEY (LieferantenID) REFERENCES Lieferant (LieferantenID)
+);
+
+CREATE TABLE IF NOT EXISTS Lieferant
+(
+	LieferantenID INTEGER AUTO_INCREMENT = 10000,
+	Name VARCHAR(255) NOT NULL,
+	Vorname VARCHAR(255) NULL,
+	TelNr INTEGER NOT NULL,
+	CHECK(TelNr >=0 A AND <=9),
+	PRIMARY KEY (LieferantenID)
+);
+CREATE TABLE IF NOT EXISTS Bestellung
+(
+	BestellNr INTEGER NOT NULL auto_increment,
+	ErsatzteilID INTEGER NOT NULL,
+	KundenID INTEGER NOT NULL,
+	AuftragsID INTEGER NOT NULL,
+	YachtID INTEGER NOT NULL,
+	LieferantenID INTEGER NOT NULL,
+	PRIMARY KEY (BestellNr),
+	FOREIGN KEY (ErsatzteilID) REFERENCES Ersatzteil (ErsatzteilID),
+	FOREIGN KEY (KundenNr) REFERENCES Kunde (KundenNr),
+	FOREIGN KEY (AuftagsID) REFERENCES Auftrag(AuftragsID),
+	FOREIGN KEY (YachtID) REFERENCES Yacht(YachtID),
+	
+)

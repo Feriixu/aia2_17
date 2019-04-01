@@ -1,0 +1,3 @@
+SELECT *,
+FROM Kunde,
+WHERE `nachname` LIKE `Ma%`&& WHERE YEAR(CurDate - GebDate) = "52";

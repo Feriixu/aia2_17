@@ -1,0 +1,99 @@
+CREATE DATABASE IF NOT EXISTS DeltaM;
+use DeltaM;
+CREATE TABLE IF NOT EXISTS Ersatzteil 
+(		
+	ErsatzteilNr	Int NOT NULL,	
+	Bezeichnung    Char NOT NULL,		
+	Zustand	       Char,
+	PRIMARY KEY (ErsatzteilNr)	
+);
+
+CREATE TABLE IF NOT EXISTS Lieferant 
+(
+		
+	LieferantenID	Int AUTO_INCREMENT NOT NULL,	
+	NameFirma	char ,	
+	Ansprechpartner	Char,	
+	Tel	Int,	
+	Str.	char,	
+	StrNr.	Int,	
+	Ort	varchar(50),	
+	Plz	varchar(4),
+	PRIMARY KEY (LieferantenID)	
+
+);
+CREATE TABLE IF NOT EXISTS Ersatzteil 
+(		
+	ErsatzteilNr	Int,	
+	LieferantenID	Int,	
+	Anzahl	Int,	
+	Kosten	Double,	
+	DatumBestel	Date,	
+	Ank.Datum	Date,
+	PRIMARY KEY (ErsatzteilNr),
+	PRIMARY KEY (LieferantenID),
+	FOREIGN KEY (ErsatzteilNr) REFERENCES Ersatzteil (ErsatzteilNr),
+	FOREIGN KEY (LieferantenID) REFERENCES Lieferant (LieferantenID),
+);
+CREATE TABLE IF NOT EXISTS Jachttyp 		
+(
+	
+	TypNr	Int NOT NULL,	
+	Bezeichnung Char,
+	PRIMARY KEY (TypNr)		
+);
+CREATE TABLE IF NOT EXISTS Jacht 		
+(
+	JachtID	Char NOT NULL,	
+	Zustand	Char ,	
+	Name	Char,	
+	KennNr	Int,
+	PRIMARY KEY (JachtID)	
+);
+CREATE TABLE IF NOT EXISTS Serviceangebot 		
+(
+	ServiceNr Int NOT NULL,	
+	Tätigkeit Char,	
+	Kosten	Double,
+	PRIMARY KEY (ServiceNr)	
+);
+CREATE TABLE IF NOT EXISTS Kunde 	
+(
+	KundenNr Int AUTO_INCREMENT(1000) NOT NULL,	
+	Name	varchar(50) DEFAULT NULL,	
+	Vorname	varchar(50) DEFAULT NULL,
+	GebDate Date,	
+	Tel	Int,	
+	Str.	char,		
+	StrNr	Int,	
+	Ort	char,	
+	Plz	Int,
+	PRIMARY KEY (KundenNr)		
+);
+CREATE TABLE IF NOT EXISTS Rechnung 
+(
+	RechnugNr Int AUTO_INCREMENT(1000) NOT NULL,	
+	Preis	Double,	
+	Datum	Date,
+	PRIMARY KEY (RechnugNr)
+	
+);
+CREATE TABLE IF NOT EXISTS Auftrag		
+(
+	AuftragNr Int NOT NULL,	
+	RechnungNr Int NOT NULL,	
+	ServiceNr Int NOT NULL,	
+	KundenNr Int NOT NULL,	
+	JachtId	char NOT NULL,	
+	PRIMARY KEY (AuftragNr),
+	FOREIGN KEY (RechnungNr) REFERENCES Rechnung (RechnungNr),
+	FOREIGN KEY (ServiceNr) REFERENCES Serviceangebot (ServiceNr),
+	FOREIGN KEY (KundenNr) REFERENCES Kunden (KundenNr),
+	FOREIGN KEY (JachtId) REFERENCES Jacht (JachtId)	
+);
+
+
+	
+
+
+

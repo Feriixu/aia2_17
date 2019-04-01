@@ -1,0 +1,95 @@
+CREATE DATABASE IF NOT EXISTS DeltaM;
+use DeltaM;
+CREATE TABLE IF NOT EXISTS Ersatzteil 
+(		
+	ErsatzteilNr	Int ,	
+	Bezeichnung    Char ,		
+	Zustand	       Char,
+	PRIMARY KEY (ErsatzteilNr)	
+);
+
+CREATE TABLE IF NOT EXISTS Lieferant 
+(	
+	LieferantenID	Integer ,	
+	NameFirma	Char,	
+	Ansprechpartner	Char,	
+	Tel	Integer,	
+	Str	Char,	
+	StrNr	Integer,	
+	Ort	varchar(50),	
+	Plz	varchar(4),
+	PRIMARY KEY (LieferantenID)	
+
+);
+CREATE TABLE IF NOT EXISTS Bestellung
+(		
+	ErsatzteilNr	Int,	
+	LieferantenID	Int,	
+	Anzahl	Int,	
+	Kosten	Double,	
+	DatumBestel	Date,	
+	AnkDatum	Date,
+	FOREIGN KEY (ErsatzteilNr) REFERENCES Ersatzteil (ErsatzteilNr),
+	FOREIGN KEY (LieferantenID) REFERENCES Lieferant (LieferantenID)
+);
+CREATE TABLE IF NOT EXISTS Jachttyp 		
+(
+	
+	TypNr	Int NOT NULL,	
+	Bezeichnung Char,
+	PRIMARY KEY (TypNr)		
+);
+CREATE TABLE IF NOT EXISTS Jacht 		
+(
+	JachtID	Char NOT NULL,	
+	Zustand	Char ,	
+	Name	Char,	
+	KennNr	Int,
+	PRIMARY KEY (JachtID)	
+);
+CREATE TABLE IF NOT EXISTS Serviceangebot 		
+(
+	ServiceNr Int,	
+	Tätigkeit Char,	
+	Kosten	Double,
+	PRIMARY KEY (ServiceNr)	
+);
+CREATE TABLE IF NOT EXISTS Kunde 	
+(
+	KundenNr Int AUTO_INCREMENT,	
+	Name	varchar(50),	
+	Vorname	varchar(50),	
+	Tel	integer,	
+	Str	Char,		
+	StrNr	integer,	
+	Ort	Char,	
+	Plz	Int,
+	PRIMARY KEY (KundenNr)		
+);
+CREATE TABLE IF NOT EXISTS Rechnung 
+(
+	RechnungNr integer,	
+	Preis	Double(10,3),	
+	Datum	Date,
+	PRIMARY KEY (RechnungNr)
+	
+);
+CREATE TABLE IF NOT EXISTS Auftrag		
+(
+	AuftragNr Int ,	
+	RechnungNr Int ,	
+	ServiceNr Int ,	
+	KundenNr Int ,	
+	JachtId	Char ,	
+	PRIMARY KEY (AuftragNr),
+	FOREIGN KEY (RechnungNr) REFERENCES Rechnung (RechnungNr),
+	FOREIGN KEY (ServiceNr) REFERENCES Serviceangebot (ServiceNr),
+	FOREIGN KEY (KundenNr) REFERENCES Kunde (KundenNr),
+	FOREIGN KEY (JachtId) REFERENCES Jacht (JachtId)	
+);
+
+
+	
+
+
+

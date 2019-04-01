@@ -1,0 +1,3 @@
+SELECT SUM(Kosten)AS summe,
+FROM rechnung,
+WHERE YEAR(DatumBestel) = “2017”;

@@ -1,0 +1,45 @@
+Nach startem von allem was man braucht:
+
+myslq -u root
+show databases; / use ... ;
+
+create database if not exists 
+db_Sport;
+show databases;
+use db_Sport
+show tables;
+DESCRIBE t_konto; ( um in die tabel rein zu gucken)
+
+create talbe if not exists t_konto (
+Kontoid INTEGER,
+PRIMARY KEY (Kontoid) );
+
+create talbe if not exists t_altersstufe (
+Stufenbezeichnung VARCHAR(255),
+PRIMARY KEY (Stufenbezeichnung) );
+----
+create table if not exists t_abteilungsLeiter (
+AbteilungsLeiterNR INTEGER,
+Name VARCHAR(255) 
+PRIMARY KEY (AbteilungsLeiterNR) );
+
+create table if not exists t_mitglied (
+MitgliedNR INTEGER,
+Altersgruppe Varchar(255),
+KontoNR INTEGER,
+name VARCHAR(255),
+PRIMARY KEY (MitgliedNR),
+FOREIGN KEY (Altersgruppe) REFERENCES t_altersstufe (Stufenbezeichnung),
+FOREIGN KEY (KontoNR) REFERECES t_konto (Kontoid) );
+
+create table if not exists t_abteilung (
+AbteilungsNR INTEGER,
+AbteilungsLeiterNR INTEGER,
+PRIMARY KEY (AbteilungsNR),
+FOREIGN KEY (AbteilungsLeiterNR) REFERENCES t_abteilungsLeiter(AbteilungsLeiterNR) );
+
+create table if not exists t_abteilungsliste (
+AbteilungsNR INTEGER,
+MitgliedNR INTEGER,
+FOREIGN KEY (AbteilungsNR) REFERENCES t_abteilung(AbteilungsNR),
+FOREIGN KEY (MitgliedNR) REFERENCES t_mitglied(MitgliedNR) );

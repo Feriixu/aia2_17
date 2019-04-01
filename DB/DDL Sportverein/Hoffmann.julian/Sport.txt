@@ -1,0 +1,41 @@
+CREATE DATABASE Sportverein;
+use Sportverein;
+CREATE TABLE Abeilungsleiter
+(
+	Name Varchar(30),
+	Strasse Varchar(50),
+	AbteilungsleiterID int,
+	PRIMARY KEY (AbteilungsleiterID)
+);
+CREATE TABLE Abeilung
+(
+	Name char,
+	AbteilungsNr int,
+	AteilungsleiterID int,
+	PRIMARY KEY (AbteilungsNr),
+	FOREIGN KEY (AteilungsleiterID) REFERENCES Abteilungsleiter (AbteilungsleiterID)
+);
+CREATE TABLE Konto
+(
+	KontoNr int,
+	PRIMARY KEY (KontoNr)
+);
+CREATE TABLE Altersstufe
+(
+	StufenID int,
+	Bezeichnung Varchar(255),
+	PRIMARY KEY (StufenID)
+);
+CREATE TABLE Mitglied
+(
+	Name Varchar(30),
+	Alter int,
+	Strasse varchar(255),
+	StrassenNr int,
+	MitgliedsNr int,
+	StufenID int,
+	KontoNr int,
+	PRIMAY KEY (MitgliedsNr),
+	FOREIGN KEY (StufenID) REFERENCES Altersstufe (StufenID),
+	FOREIGN KEY (KontoNr) REFERENCES Altersstufe (KontoNr),
+);
