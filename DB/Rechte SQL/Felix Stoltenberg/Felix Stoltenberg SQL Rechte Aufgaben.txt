@@ -1,0 +1,53 @@
+1) Ein Benutzer wird angelegt. 
+"safepass" ist der Username
+"localhost" ist die Adresse
+"Karl" ist das Passwort
+
+2)
+CREATE USER Peter@localhost IDENTIFIED BY "whats7";
+CREATE USER Rechnungsstelle@localhost IDENTIFIED BY "223intern";
+CREATE USER 778@localhost IDENTIFIED BY "778";
+
+3)
+GRANT SELECT ON kanzlei.Rechnungen TO Meyer@localhost;
+GRANT SELECT, UPDATE, INSERT ON kanzlei.Rechnungen TO Schmidt@localhost;
+GRANT DELETE ON kanzlei.Anwalt TO Schmidt@localhost;
+GRANT UPDATE ON kanzlei.Rechnungen TO Schmidt@localhost;
+
+4)
+a) Der Benutzer Lara erhält das INSERT Privileg für die Tabelle Anwalt
+b) Der Benutzer Lara erhält das DELETE Privileg für die Tabelle Anwalt
+c) Falsche Syntax TO statt FROM
+b) Falsche Syntax FROM statt TO
+
+5)
+Karl hat keine Privilegien für die Tabelle Rechnungen.
+SQL wird ihm mitteilen, dass er keine Privilegien hat.
+
+6)
+
+7)
+REVOKE INSERT ON kanzlei.Rechnungen FROM Thompson;
+REVOKE SELECT ON kanzlei.Anwalt FROM Miller;
+Er hat die Rechte nicht mehr
+
+8)
+CREATE USER Weiler@localhost IDENTIFIED BY "true";
+GRANT SELECT, UPDATE ON kanzlei.Rechnungen TO Weiler@localhost;
+
+9) Ihre Aufgaben sind unvollständig...
+SHOW GRANTS FOR	smith@localhost;
+Dann Miller die Rechte geben.
+REVOKE ALL PRIVILEGES FROM smith@localhost;
+DROP USER smith@localhost;
+
+10)
+Smith, Miller haben kein SELECT privileg auf Rechnungen mehr.
+Thompson wurde gelöscht.
+User spion mit passwort "xxx" wurde erstellt.
+Spion hat alle Rechte auf rechnungen bekommen
+Spion hat alle rechnungen gelöscht.
+
+Wie rückgängig machen?
+Am besten ein Backup einspielen.
+
