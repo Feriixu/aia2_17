@@ -1,0 +1,4 @@
+Erklären Sie was im folgenden Code passiert:
+CREATE USER safepass@localhost IDENTIFIED BY ‘Karl‘;
+
+Es wird ein Benutzer mit dem Namen safepass@localhost erstellt und das Passwort ist ´Karl´.

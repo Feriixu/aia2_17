@@ -1,0 +1,29 @@
+
+a)
+
+ CREATE USER Peter IDENTIFIED BY ‘whats7‘;
+
+Beurteilen Sie die Nützlichkeit dieser Benutzer.
+Scheint, dass ein Mitarbeiter einen Benutzter mit em password whats7 bekommen hat.
+was eig. gut ist
+
+b)
+ 
+ CREATE USER Rechnungsstelle IDENTIFIED BY ‘223intern‘;
+
+Beurteilen Sie die Nützlichkeit dieser Benutzer.
+Es macht kein sinn ein benutzer nur zu erstellen um nur die Rechnungsstelle auszulesen oder änlicher mit dem password 223intern.
+lieber gibt man den mitarbeiter der diese berechtigung braucht einen benutzter mit genau diesen rechten.
+aber ich kann mir vostellen das man es auch so machen kann wäre aber meiner meinung nach nicht optimal.
+
+
+c)
+
+ CREATE USER 778 IDENTIFIED BY ‘778‘;
+
+Beurteilen Sie die Nützlichkeit dieser Benutzer.
+
+ich sehe es nur als belast für die datenbank, der name des benutzer ist unsinnig das passwort ist okay aber dazu kommt wieder das der name = mit dem passwort ist
+deshalb ist die sicherheit = 0.
+sowas kann vergessenwerden und als müll in der datenbank bleiben.
+ich würde sagen NIE nachmachen.

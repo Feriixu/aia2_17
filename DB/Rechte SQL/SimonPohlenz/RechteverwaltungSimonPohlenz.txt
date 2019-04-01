@@ -1,0 +1,59 @@
+1) - Es wird ein neuer lokaler Benutzer namens safepass und mit dem Passwort Karl erstellt
+
+2)
+	a) CREATE USER Peter IDENTIFIED BY 'whats7';
+	b) CREATE USER Rechnungsstelle IDENTIFIED BY '223intern';
+	c) CREATE USER 778 IDENTIFIED BY '778';
+   - Der Benutzer Peter ist ein normaler Benutzer und nützlich
+   - Wenn mehrere Benutzer der Rechnungsstelle auf die Datenbank zugreifen müssen ist
+     Benutzer b auch sinvoll
+   - Die Sinhaftigkeit des Benutzers 778 erschließt sich mir nicht
+
+3)
+	a) GRANT Privileg SELECT ON Rechnungen TO Meyer;
+	b) GRANT Privileg SELECT, UPDATE, INSERT ON Rechnungen TO Schmidt;
+	c) GRANT Privileg DELETE ON Anwalt TO Schmidt;
+
+4)
+	a) Insertrechte werden Lara für Tabelle Anwalt gegeben
+	b) Deleterechte werden Lara für Tabelle Anwalt gegeben
+	c) Selectrechte werden Lara für Tabelle Anwalt weggenommen
+	d) Updaterechte werden Lara für Tabelle Anwalt gegeben
+   - TO muss durch FROM ersetzt werden bei c)
+   - FROM muss durch TO ersetzt werden bei d)
+
+5) - Karl hat keine Rechte die Tabelle Rechnungen zu updaten, also wird er eine Fehlermeldung
+     als Antwort erhalten
+
+6) Vergleich Meyer und Smidt:
+   - Meyer kann nur aus Rechnungen Selektieren, während Schmidt die Befehle
+     SELECT, UPDATE und INSERT ausführen kann, sowie aus Anwalt löschen kann
+
+7)
+	a) REVOKE INSERT ON Rechnungen FROM Thompson
+	b) REVOKE SELECT ON Anwalt FROM Miller
+
+8)
+	CREATE USER Weiler IDENTIFIED BY 'true';
+	GRANT Privileg SELECT, UPDATE ON Rechnungen TO Meyer;
+	DROP USER Weiler;
+
+9)
+	SHOW GRANT for Smith;
+	GRANT Privileg /*alle die er braucht*/ ON Anwalt TO Miller;
+	DROP USER Smith;
+
+10)
+   - Smith und Miller wurden die Rechte SELECT auf Tabelle Rechnungen entzogen
+   - Thompson wurde gelöscht
+   - Benutzer Spion wird erstellt und ihm werden alle Rechte auf Rechnungen gewährt
+   - Es wird sich als Spion angemeldet
+   - Alles aus der Tabelle Rechnungen wird gelöscht
+
+   - Der Löschvorgang kann nur schwer von Experten wiederhergestellt werden, also
+     entsteht großer Schaden für die Kanzlei
+
+11)
+	CREATE USER Bruno IDENTIFIED BY 'Trudy';
+	GRANT all Privileges ON Rechnungen TO Bruno;
+	GRANT Privileg SELECT ON Anwalt TO Bruno

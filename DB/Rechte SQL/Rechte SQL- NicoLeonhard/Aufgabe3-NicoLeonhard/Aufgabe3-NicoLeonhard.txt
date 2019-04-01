@@ -1,0 +1,15 @@
+a)
+
+GRANT select ON Rechnungen TO Meyer;
+
+b)
+
+GRANT select, update, insert ON Rechnungen TO Schmidt;
+
+c)
+
+REVOKE delete ON Anwalt TO Schmidt;
+
+d)
+
+GRANT update ON Rechnungen TO Schmidt;

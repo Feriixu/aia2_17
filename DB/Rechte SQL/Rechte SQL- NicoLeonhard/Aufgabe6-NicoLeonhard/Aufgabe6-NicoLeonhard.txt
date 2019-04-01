@@ -1,0 +1,7 @@
+Schauen Sie sich die Rechte von Thompson und Miller an. Wer darf mehr tun?
+
+SHOW GRANTS FOR Thompson;
+
+SHOW GRANTS FOR Miller;
+
+kann man dann rauslesen, ich habe garkeine benutzer mit irgendwelchen rechten deswegen habe ich da den quellcode hingeschrieben.

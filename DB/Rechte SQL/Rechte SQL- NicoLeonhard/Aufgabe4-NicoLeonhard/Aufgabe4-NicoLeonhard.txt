@@ -1,0 +1,25 @@
+Wir wollen die Rechte des Benutzers Lara@localhost ändern.
+Erkläre in eigenen Worten was hier passiert.
+
+a) GRANT Insert ON ‘kanzlei‘.‘anwalt‘ TO ‘Lara‘@‘localhost‘;
+
+Lara bekommt das Insert-Recht auf die tabelle anwalt in der datenbank kantlei.
+
+b) GRANT Delete ON ‘kanzlei‘.‘anwalt‘ TO ‘Lara‘@‘localhost‘;
+
+Lara bekommt das recht aus der datenbank kanzlei die anwalt tabelle zu entfernen.
+
+c) REVOKE Select ON ‘kanzlei‘.‘anwalt‘ TO ‘Lara‘@‘localhost‘;
+
+Lara bekommt das recht aus der datenbank kanzlei die anwalt tabelle zu entfernen.
+
+d) GRANT Update ON ‘kanzlei‘.‘anwalt‘ FROM ‘Lara‘@‘localhost‘;
+
+lara bekommt das update recht auf die tabelle anwalt in der datenbank kanzlei
+
+Bei den Befehlen c) und d) meckert SQL. Warum?
+
+zu c)
+revoke nimmt man die ercht von einem benutzer und deswegen nicht to sonder from.
+zu d)
+und um rechte hinzu zufügen gibt man dem benutzer rechte mit to und nicht mit from.

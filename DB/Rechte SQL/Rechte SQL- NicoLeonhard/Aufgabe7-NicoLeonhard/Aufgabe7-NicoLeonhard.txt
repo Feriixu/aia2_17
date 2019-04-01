@@ -1,0 +1,9 @@
+a)
+
+REVOKE Insert On Rechnungen from Thompson;
+
+b)
+
+REVOKE Select On Table from Miller;
+
+da ich diese benutzter oder generell keinen benutzer habe kann ich nicht einsehen was für recht sie jetzt haben aufjeden fall die beiden nicht.

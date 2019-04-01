@@ -1,0 +1,13 @@
+Karl hat den SHOW GRANTS-Befehl eingegeben und erhält folgende Ausgabe:
+
+GRANT USAGE ON *.* TO ‘Karl‘@‘localhost‘
+GRANT SELECT, UPDATE ON ‘kanzlei‘.‘anwalt‘ TO ‘Karl‘@‘localhost‘
+
+anach hat er folgenden Befehl eingeben:
+
+UPDATE Rechnungen SET Betrag=50;
+Was wird er als Antwort erhalten? Warum?
+
+Die antwort die er bekommt ist das er keine rechte dazu hat, wie man obe nachschauen kann
+sieht man nichts über tabelle rechnungen das heißt er hat keine rechte für die tabelle, weder select noch irgendwas anderes
+und deshablt bekommt er als antwort keine rechte vohanden.
