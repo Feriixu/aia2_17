@@ -1,7 +1,12 @@
-Aufzeichnungen zu Rechteverwaltung
+--Aufzeichnungen zu Rechteverwaltung
 
 
-mysql -u root
+--mysql -u root
+drop user Miller;
+drop user Thompson;
+drop user Meyer;
+drop user Schmidt;
+drop user Bruno;
 drop database Kanzlei;
 create database Kanzlei;
 use Kanzlei;
@@ -12,7 +17,7 @@ Name varchar(255),
 Zulassung bool,
 primary key(AnwaltID)
 ) ;
-create table Rechung
+create table Rechnung
 (
 RechnungsID integer not null,
 AnwaltID integer not null,
@@ -44,9 +49,9 @@ als Benutzer nicht zulässig.
 
 --Aufgabe 3:
 create user Meyer identified by 'lama';
-grant select on Rechung to Meyer;
+grant select on Rechnung to Meyer;
 create user Schmidt identified by 'maulwurf';
-grant select, update, insert on Rechung to Schmidt;
+grant select, update, insert on Rechnung to Schmidt;
 grant delete on Anwalt to Schmidt;
 grant update on Rechnung to Schmidt;
 
@@ -78,11 +83,11 @@ Er wird die Werte nicht ändern können.
 
 --Aufgabe 7:
 
-create user Thompson;
-Create user Miller;
+create user Thompson@localhost identified by 'AhoiIhrBonobos123?!';
+Create user Miller@localhost identified by 'AhoiBrause';
 grant insert on Rechnung to Thompson;
 grant select on Anwalt to Miller;
-revoke insert on Rechung from Thompson;
+revoke insert on Rechnung from Thompson;
 revoke select on Anwalt from Miller;
 show grants for Miller;
 show grants for Thompson;
