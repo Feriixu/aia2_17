@@ -1,0 +1,8 @@
+CREATE USER 'buchhandlung'@'localhost' IDENTIFIED BY '#egsrezheh#t4evc*+ff#';
+GRANT ALL PRIVILEGES ON * . * TO 'buchhandlung'@'localhost';
+
+CREATE USER 'service'@'localhost' IDENTIFIED BY '#egs#t44evc*5z6+ff#';
+GRANT ALL PRIVILEGES ON * . * TO 'service'@'localhost';
+
+CREATE USER 'vertrieb'@'localhost' IDENTIFIED BY '#egs#t4evc*+ff#';
+GRANT ALL PRIVILEGES ON * . * TO 'vertrieb'@'localhost';
