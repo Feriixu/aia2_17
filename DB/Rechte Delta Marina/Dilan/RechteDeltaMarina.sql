@@ -13,6 +13,6 @@ GRANT All PRIVILEGES ON Bestellung to Buchhandlung;
 GRANT UPDATE, INSERT, DELETE on Serviceangebot to Service;
 GRANT UPDATE, INSERT, INSERT on Lieferant, Ersatzteil, Bestellung, Auftrag to Vertrieb;
 GRANT UPDATE, INSERT INSERT on Lieferant to Vertrieb;
-GRANT UPDATE, INSERT INSERT on Ersatzteil to Vertrieb;
+GRANT UPDATE, INSERT INSERT on Ersatzteiltyp to Vertrieb;
 GRANT UPDATE, INSERT INSERT on Bestellung to Vertrieb;
 GRANT UPDATE, INSERT INSERT on Auftrag to Vertrieb;
