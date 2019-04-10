@@ -1,0 +1,24 @@
+﻿/*
+Buchhaltung wird von Peter geleitet
+Service wird von Petra geleitet
+Vetrieb wird von Piere geleitet
+*/
+create user Peter identified by 'Petra';
+create user Petra identified by 'Piere';
+create user Piere identified by 'Peter';
+grant select on rechnung to Peter;
+grant select on kunde to Peter;
+grant select on auftrag to Peter;
+grant select on Rechnung to Petra;
+grant select on Kunde to Petra;
+grant select on Rechnung to Piere;
+grant select on Kunde to Piere;
+grant Update, insert , delete on Serviceangebot to Petra;
+grant all PRIVILEGES on Lieferant to Piere; 
+grant all PRIVILEGES on Bestellung to Piere;
+grant all PRIVILEGES on Auftrag to Piere;
+grant all PRIVILEGES on Ersatzteil to Piere;
+grant Select, Delete, Update, Insert on Auftrag to Peter;
+grant Select, Delete, Update, Insert on Bestellung to Peter;
+grant Select, Delete, Update, Insert on Rechnung to Peter;
+
