@@ -1,0 +1,4 @@
+GRANT Select ON Rechnungen TO Meyer; ?Im Admin-Account.
+GRANT Select, Update, Insert  ON Rechnungen TO Schmidt; ?Im Admin-Account.
+REVOKE * ON Anwalt FROM Schmidt; ?Im Admin-Account.
+GRANT Update, ON Rechnungen TO Schmidt; ?Im Admin-Account

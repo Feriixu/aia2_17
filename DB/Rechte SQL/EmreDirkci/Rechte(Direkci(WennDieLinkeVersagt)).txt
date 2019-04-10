@@ -1,0 +1,71 @@
+1) Ein User namens safepass wird hinzugefügt mit dem 
+   Passwort "Karl"... eigenartiges Passwort..
+ 
+2)
+  a) Create user Peter@localhost identified by whats7
+  b) Create user Rechnungsstelle@localhost identified by 223intern
+  c) Create user 788@localhost identified by 778
+  
+  a) in ordnung
+  b) Ok
+  c) Nein...einfach nein
+  
+  
+3)
+  a) Grant privileg Select on Rechnungen to Meyer ;
+  b) Grant privileg Select, update, insert on Rechnungen to Schmidt ;
+  c) Grant privileg delete on Anwalt to Schmidt ;
+  d) Grant privileg update on Rechnungen to Schmidt ;
+  
+4) 
+  a) Lara bekommt das Insert Recht auf die Tabelle anwalt.
+  b) Lara bekommt das Delete Recht auf die Tabelle anwalt.
+  c) Lara verliert das select Recht auf die Tabelle anwalt.
+  d) Lara bekommt das Insert Recht auf die Tabelle anwalt.
+  
+  Er meckert aus diesen Gründen : 
+  
+  c) "from" anstelle "to"
+  d) "to" anstelle "from"
+  
+5)
+  Er hat keine Rechte auf die Tabelle "Rechnungen"
+  , sprich er kann sie nicht updaten.
+  
+6)Show Grant for Thompson;                                                         *
+  Show Grant for Thompson;
+  
+  Ohne Code schwer zu beantworten
+  
+7)
+  a) Revoke Insert on Rechnungen from Thompson;
+  b) Revoke Select on Anwalt from Miller;
+     Show Grant for Miller;
+     (Kann ich mir nicht anzeigen lassen)
+
+8)	 
+    Create user Weiler@localhost identified by true;
+	Grant privileg Select, update on Rechnungen to Weiler ;
+	Drop user Weiler;
+	
+9)
+   (keine ahnung was der für rechte hat)
+   Drop user Smith;
+   Grant privileg delete, update on Anwalt to Miller;
+
+10)
+   -Viele Rechte wurden entzogen
+   -User wurden gelöscht
+   - Hat sich einen eigenen User namens Spion mit allen      
+     rechten auf die rechnungen
+   - Hat alle Rechnungen gelöscht
+   
+   Lösung : 
+   Drop user spion;
+    
+ |_> Mit dem Grant kann man die Rechte zurückgeben
+
+11)
+   -Create user Bruno@localhost identified by Trudy;
+   -Grant all privileg on * ;
+  	

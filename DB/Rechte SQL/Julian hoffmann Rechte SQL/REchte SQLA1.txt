@@ -1,0 +1,1 @@
+es wird ein lockaler nutzer erstelt mit dem passwort "Karl"

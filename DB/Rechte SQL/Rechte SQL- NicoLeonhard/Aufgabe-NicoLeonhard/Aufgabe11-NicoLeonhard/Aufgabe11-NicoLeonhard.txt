@@ -1,0 +1,3 @@
+CREATE USER Bruno IDENTIFIED BY ´Trudy´;
+GRANT Delete,select,update ON Rechnungen TO Bruno;
+Grant select on Anwälte to Bruno;

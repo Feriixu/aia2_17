@@ -1,0 +1,4 @@
+SHOW GRANTS FOR Smith;
+GRANT Update, delete ON Anwalt TO Miller;
+REVOKE all privileges On Anwalt from Smith;
+Drop user Smith;

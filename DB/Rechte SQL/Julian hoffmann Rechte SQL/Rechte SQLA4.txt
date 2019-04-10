@@ -1,0 +1,7 @@
+Gibt den insert befehl für die tabbelen kanzlei und anwalt für den lockal host lara frei .
+Gibt den DElete befehl für die tabbelen kanzlei und anwalt für den lockal host lara frei .
+Entfernt das recht den befehl select für kanzlei und anwalt für denn lockal host lara .
+Gibt den Update befehl für die tabbelen kanzlei und anwalt für den lockal host lara frei .
+	
+bei c muss es stadt to from heissen .
+und bei d statt from to .

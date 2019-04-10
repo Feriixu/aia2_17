@@ -1,0 +1,3 @@
+CREATE USER Weiler IDENTIFIED BY ‘true‘;
+GRANT  Update ON Rechnungen TO Weiler ;
+Drop User Weiler BY IDENTIFIED BY‘true‘;

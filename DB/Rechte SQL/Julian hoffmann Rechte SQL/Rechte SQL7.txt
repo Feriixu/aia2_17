@@ -1,0 +1,5 @@
+REVOKE Insert ON Rechnungen FROM Thompson;
+REVOKE Select ON Anwalt FROM Miller;
+
+
+keine ahnung die nutzer exestiert nicht .

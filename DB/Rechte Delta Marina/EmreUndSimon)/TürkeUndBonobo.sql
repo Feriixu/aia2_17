@@ -78,10 +78,42 @@ Er wird die Werte nicht ändern können.
 
 --Aufgabe 7:
 
+create user Thompson;
+Create user Miller;
+grant insert on Rechnung to Thompson;
+grant select on Anwalt to Miller;
 revoke insert on Rechung from Thompson;
 revoke select on Anwalt from Miller;
 show grants for Miller;
 show grants for Thompson;
 --Was wir sehen weiß ich aber nicht.
+
+--Aufgabe 8:
+create user Weiler identified by 'true';
+grant select, update on Rechnung to Weiler;
+drop user Weiler;
+
+--Aufgabe 9:
+
+create user Smith;
+show grants for Smith;
+drop user Smith;
+--grant /*Welche Rechte Smith hatte*/ on /*Tabelle*/ to Miller;
+
+--Aufgabe 10:
+
+/* Hier hat der Hacker die Rechte von Personen 
+ausgelesen, diesen Rechte Entzogen und
+hat anschließend Thompson gelöscht. Dann hat
+er sich ein eigenes Spion-Konto erstellt
+und sich alle Rechte gegeben und damit angemeldet.
+Er hat die Rechnungen ausgeben lassen und diese
+dann gelöscht. Die Kanzlei sollte das Konto löschen.
+*/
+
+--Aufgabe 11:
+
+create user Bruno identified by 'Trudy';
+grant all privileges on * to Bruno;
 
 

@@ -1,0 +1,26 @@
+Die Kanzlei wurde von einem Trojaner angegriffen.
+Er hat folgenden Code als Admin eingegeben:
+
+show grant for Smith@localhost;
+show grants for Miller@localhost;
+show grants for Thompson@localhost;
+revoke select on kanzlei.rechnungen from Smith@localhost;
+revoke select on kanzlei.rechnungen from Miller@localhost;
+drop user Thompson@localhost;
+create user spion identified by ‘xxx‘;
+grant all privileges on kanzlei.rechnungen to spion;
+exit;
+mysql –u spion –p;
+xxx use kanzlei;
+select * from rechnungen;
+delete * from rechnungen;
+exit;
+
+Die Kanzlei möchte wissen was hier passiert ist.
+Wie kann das Rückgängig gemacht werden?
+Welcher Schaden entstand der Kanzlei?
+
+Es wurden alle rechnungen gelöscht, dies ist nur bei einem backup wieder herstellbar.
+der schaden der endstanden ist kann ich nicht abschätzten aber es fehlen rechnungen wenn man sie nicht gespeichert wurden.
+man kann es fixen denn der virus hat einen syntax fehler bei smith gemacht hat, hat er auch noch die rechte und kann den 
+virus rauswerfen und ihn löschen und am besten von allen das passwort ändern damit es nicht nochmal passiert.

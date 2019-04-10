@@ -1,0 +1,21 @@
+
+
+create user Buchhaltung identyfied by "Taco";
+Grant Select , update , delete ,Insert on rechnung to Buchhaltung  ;
+create user vertrieb identyfied by "Tacito";
+Grant Select , update  on rechnung;
+Grant Select on kunde;
+Grant Select on Lieferant;
+create user service identyfied by "Tacitilito";
+Grant select , update , delete , insert on serviceangebot;
+Grant select  on ersatzteil;
+Grant select on jacht,jachttyp;
+
+
+
+
+
+
+
+
+

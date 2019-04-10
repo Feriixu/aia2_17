@@ -3,7 +3,7 @@ Erkläre in eigenen Worten was hier passiert.
 
 a) GRANT Insert ON ‘kanzlei‘.‘anwalt‘ TO ‘Lara‘@‘localhost‘;
 
-Lara bekommt das Insert-Recht auf die tabelle anwalt in der datenbank kantlei.
+Lara bekommt das Insert-Recht auf die tabelle anwalt in der datenbank kanzlei.
 
 b) GRANT Delete ON ‘kanzlei‘.‘anwalt‘ TO ‘Lara‘@‘localhost‘;
 
@@ -11,7 +11,7 @@ Lara bekommt das recht aus der datenbank kanzlei die anwalt tabelle zu entfernen
 
 c) REVOKE Select ON ‘kanzlei‘.‘anwalt‘ TO ‘Lara‘@‘localhost‘;
 
-Lara bekommt das recht aus der datenbank kanzlei die anwalt tabelle zu entfernen.
+Lara bekommt das recht aus der datenbank kanzlei die anwalt tabelle zu entfernen entnommen.
 
 d) GRANT Update ON ‘kanzlei‘.‘anwalt‘ FROM ‘Lara‘@‘localhost‘;
 
@@ -21,5 +21,6 @@ Bei den Befehlen c) und d) meckert SQL. Warum?
 
 zu c)
 revoke nimmt man die ercht von einem benutzer und deswegen nicht to sonder from.
+es könnte sein das sie die rechte nicht hatte und ihr die dann abzuziehen geht dann nicht
 zu d)
 und um rechte hinzu zufügen gibt man dem benutzer rechte mit to und nicht mit from.

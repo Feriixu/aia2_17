@@ -1,0 +1,11 @@
+CREATE USER Peter IDENTIFIED BY ‘whats7‘;
+CREATE USER REchnungsstelle IDENTIFIED BY ‘223intern‘;
+CREATE USER 778 IDENTIFIED BY ‘778‘;
+
+
+
+
+
+DEr benutzer peter könnte nützlich sein um informationen zu erhalten ohne diese zu ändern oder als admin .
+Die rechnungstelle ist nützlich und gegebenen fals notwendig solte es sich hier um eine firma handeln .
+778 ist unnütz hat keinen brauchbaren namen und auch kein brauchbares passwort.

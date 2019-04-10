@@ -13,10 +13,10 @@ c) GRANT Delete ON Anwalt TO Schmidt;
 d) GRANT Update ON Rechnungen TO Schmidt; 
 
 4.
-a) Benutzer Lara@localhost bekommt Insert Rechte für die Tabellen kanzlei und anwalt
-b) Benutzer Lara@localhost bekommt Delete Rechte für die Tabellen kanzlei und anwalt
-c) Benutzer Lara@localhost werden die SELECT Rechte für die Tabellen kanlzei und anwalt entzogen
-d) Benutzer Lara@localhost bekommt Update Rechte für die Tabellen kanzlei und anwalt#
+a) Benutzer Lara@localhost bekommt Insert Rechte für die Tabelle (DB kanzlei) anwalt
+b) Benutzer Lara@localhost bekommt Delete Rechte für die Tabelle (DB kanzlei) anwalt
+c) Benutzer Lara@localhost werden die SELECT Rechte für die Tabelle (DB kanzlei) anwalt entzogen
+d) Benutzer Lara@localhost bekommt Update Rechte für die Tabelle (DB kanzlei) anwalt
 
 Revoke = From   
 Grant = TO 
