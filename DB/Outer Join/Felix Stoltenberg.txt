@@ -1,0 +1,76 @@
+Übung 1:
+	1 FALSCH
+	2 RICHTIG
+	3 FALSCH
+	4 Ich verstehe die Frage nicht. RIGHT JOIN gibt alle Rows der rechten Tabelle und die Matching Rows der linken Tabelle zurück.
+	5 RICHTIG
+	6 Nicht unbedingt
+
+Übung 2:
+
+SELECT Kennzeichen, Bezeichnung
+FROM Fahrzeug fz
+LEFT JOIN Fahrzeugtyp ft 
+	ON fz.Fahrzeugtyp_ID = ft.ID
+WHERE fz.ID <= 20;
+
+	LEFT JOIN gibt nur die Matching Rows der rechten Tabelle (Fahrzeugtyp) zurück. Damit zusätzlich alle Fahrzeugtypen zurückgegeben werden muss FULL JOIN benutzt werden.
+	
+Übung 3:
+	SELECT *
+	FROM Versicherung vs
+	LEFT JOIN Kunden kd ON vs.ID = kd.Versicherung_ID
+	
+Übung 4:
+	SELECT *
+	FROM Dienstwagen dw
+	FULL JOIN Fahrzeugtyp ft
+		ON dw.Fahrzeugtyp_ID = ft.ID
+	LEFT JOIN Hersteller hs
+		ON dw.Hersteller_ID = hs.ID;
+		
+Übung 5:
+	SELECT *
+	FROM Mitarbeiter ma
+	LEFT JOIN Dienstwagen dw
+		ON ma.ID = dw.Mitarbeiter_ID
+	WHERE 1 <= ma.Abteilung <= 5;
+	
+Übung 6:
+	SELECT * 
+	FROM Versicherung vs
+	LEFT JOIN Kunde kd
+		ON vs.ID = kd.Versicherung_ID
+	WHERE kd.Nachname LIKE 'S%'
+	
+Übung 7:
+	1. Es werden mehr angezeigt, da jetzt Mitarbeiter die linke Tabelle ist.
+	2. ??? Wir haben keine Datenbank Struktur vorliegen. Bitte stellen sie bessere Aufgaben.
+	
+Übung 8:
+	SELECT ma.Name, ma.Nachname, dw.Bezeichnung, dw.Hersteller
+	FROM Mitarbeiter ma
+	FULL JOIN Dienstwagen dw
+		ON ma.ID = dw.Mitarbeiter_ID
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
