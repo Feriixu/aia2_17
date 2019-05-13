@@ -1,0 +1,27 @@
+Aufgaben zu JOIN:
+
+1.
+An sich ist diese These richtig, wenn man davon ausgeht, dass man auch
+die Mitarbeiter ohne Dienstwagen einsehen möchte. Sollte dies nicht
+der Fall sein, benötigt man einen left inner join.
+
+2.
+Das ist korrekt.
+
+3.
+Das ist wahr.
+
+4.
+Diese Aussage ist falsch. Es werden ledigleich von der linken Tabelle
+die Werte angezeigt, die der Rechten zugeordnet sind. Die rechte Tabelle
+wird vollständig dargestellt.
+
+5.
+Das ist korrekt.
+
+6.
+Die Reihenfolge bleibt gleich, aber die Seiten sind vertauscht.
+
+Aufgabe 2:
+
+Vor den Worten Kennzeichen und Bezeichnung müsste ein "fz" stehen.
