@@ -1,0 +1,57 @@
+Übung 1:
+
+1) wahr
+2) wahr
+3) wahr
+4) falsch
+5) wahr
+6) falsch
+--------------------------------------------------------------------------
+Übung 2:
+
+1 select Kennzeichen, Bezeichnung  // es fehlt aus welcher tabelle
+2   from Fahrzeug fz
+3        left join Fahrzeugtyp ft on fz.Fahrzeugtyp_ID = ft.ID
+4  where fz.ID <= 20 ;
+--------------------------------------------------------------------------
+Übung 3:
+
+SELECT k.Name, k.Vorname
+	FROM Versicherungsgesellschaften k  
+left JOIN Versicherungskunde vk ON vk.kunde_ID = k.id;
+--------------------------------------------------------------------------
+Übung 4:
+
+SELECT 	dw.Fahrzeugtyp_ID AS TypID,
+	dw.Bezeichnung as Typ, herst.ID as Hersteller
+FROM Dienstwagen dw 
+JOIN  hersteller herst ON herst.ID = dw.Fahrzeugtyp_ID; 
+--------------------------------------------------------------------------
+Übung 5:
+
+SELECT 	mi.mitarbeiterID AS Mitarbeiter,
+	DiW.ID as Dienstwagen, mi.abeitlung
+	FROM Dienstwagen DiW
+left join mitarbeiter mi on mi.mitarbeiterID = DiW.Id
+where mi.abteilung <= 5 ;
+--------------------------------------------------------------------------
+Übung 6:
+
+SELECT k.Name, k.Vorname
+	FROM Versicherungsgesellschaften k  
+left JOIN Versicherungskunde vk ON vk.kunde_ID = k.id
+where k.Name like 'S%';
+--------------------------------------------------------------------------
+Übung 7:
+
+SELECT 	mi.mitarbeiterID AS Mitarbeiter,
+	DiW.ID as Dienstwagen, mi.abeitlung
+	FROM mitarbeiter mi
+left join Dienstwagen DiW on mi.mitarbeiterID = DiW.Id
+where mi.abteilung <= 5 ;
+
+1) weil mitarbeiter zuerst gesammelt werden und dann dazu passende dienstwagen hinzugefügt werden
+2) weil alle mitarbeite gezegit werden mit oder ohne persönlichen dienstwagen
+--------------------------------------------------------------------------
+Übung 8:
+
