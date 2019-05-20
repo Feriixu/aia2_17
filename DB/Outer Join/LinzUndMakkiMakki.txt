@@ -3,7 +3,7 @@ Aufgaben zu JOIN:
 1.
 An sich ist diese These richtig, wenn man davon ausgeht, dass man auch
 die Mitarbeiter ohne Dienstwagen einsehen möchte. Sollte dies nicht
-der Fall sein, benötigt man einen left inner join.
+der Fall sein, benötigt man einen inner join.
 
 2.
 Das ist korrekt.
@@ -24,4 +24,43 @@ Die Reihenfolge bleibt gleich, aber die Seiten sind vertauscht.
 
 Aufgabe 2:
 
-Vor den Worten Kennzeichen und Bezeichnung müsste ein "fz" stehen.
+Vor dem Wort Kennzeichen müsste ein "fz" stehen und vor Bezeichnung müsste ein ft stehen.
+Dazu muss die Möglichkeit berücksichtigt werden, wenn die FZ id nicht da ist.
+
+Aufgabe 3:
+
+select knd.Name, knd.Nachname
+from Versicherungsgesellschaft vg
+left join Kunde knd on knd.ID = vg.VGID;
+
+Aufgabe 4:
+
+select wg.Fahrzeugtyp, wg.Hersteller
+from Dienstwagen dw
+left join Wagen wg on wg.ID = dw.ID;
+
+Aufgabe 5:
+
+select ma.Name, ma.ID as MITARBEITER, wg.Bezeichnung
+from Wagen wg
+left join MITARBEITER ma on ma.ID = wg.ID;
+
+Aufgabe 6:
+
+select knd.Name, knd.Nachname
+from Versicherungsgesellschaft vg
+left join Kunde knd on knd.ID = vg.VGID;
+where knd.Nachname = 'S%';
+
+Aufgabe 7:
+
+Es werden nun auch bedingungslosm die Mitarbeiter angezeigt,
+weshalb auch die Mitarbeiter angezwigt werden, die vorher
+nicht angezeigt wurden.
+
+Die Dienstwagen fehlen, weil nicht mehr auf diese geprüft wird.
+
+Aufgabe 8:
+
+
+

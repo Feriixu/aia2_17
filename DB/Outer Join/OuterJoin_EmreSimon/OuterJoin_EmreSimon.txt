@@ -1,0 +1,53 @@
+﻿1)
+	Falsch, Wahr, Falsch, Falsch, Wahr, Keine Ahnung
+
+2)
+	SELECT Kennzeichen, Bezeichnung FROM Fahrzeug fz
+	LEFT JOIN Fahrzeugtyp ft 
+		ON fz.Fahrzeugtyp_ID = ft.ID
+		WHERE fz.ID <= 20;
+
+	Durch einen Left Join werden nur die passenden Einträge der rechten Tabelle zurückgegeben.
+	Für alle Einträge muss ein Full Join verwendet werden.
+
+3)
+	SELECT * FROM Versicherung vs
+	LEFT JOIN Kunden kd ON vs.ID = kd.Versicherung_ID
+	
+4)
+	SELECT * FROM Dienstwagen dw
+	FULL JOIN Fahrzeugtyp ft
+		ON dw.Fahrzeugtyp_ID = ft.ID
+	LEFT JOIN Hersteller hs
+		ON dw.Hersteller_ID = hs.ID;
+		
+5)
+	SELECT * FROM Mitarbeiter ma
+	LEFT JOIN Dienstwagen dw
+		ON ma.ID = dw.Mitarbeiter_ID
+		WHERE 1 <= ma.Abteilung <= 5;
+	
+6)
+	SELECT * FROM Versicherung vs
+	LEFT JOIN Kunde kd
+		ON vs.ID = kd.Versicherung_ID
+		WHERE kd.Nachname LIKE 'S%'
+	
+7)
+	SELECT 	mi.mitarbeiterID AS Mitarbeiter, DiW.ID as Dienstwagen, mi.abeitlung FROM mitarbeiter mi
+	LEFT JOIN Dienstwagen DiW on mi.mitarbeiterID = DiW.Id;
+
+	1) Erst werden die Mitarbeiter hinzugefügt und erst dann passende Dienstwagen angezeigt
+	2) Durch den Join werden alle Mitarbeiter angezeigt, egal ob mit oder ohne Dienstwagen
+
+8)
+	SELECT 	mi.mitarbeiterID AS Mitarbeiter, mi.name, mi.vorname, DiW.Bezeichnung, DiW.Hersteller, DiW.ID as Dienstwagen, mi.abeitlung 
+		FROM mitarbeiter mi
+	LEFT JOIN Dienstwagen DiW on mi.mitarbeiterID = DiW.Id
+		WHERE mi.abteilung <= 5;
+
+9)
+	SELECT 	mi.mitarbeiterID AS Mitarbeiter, mi.name, mi.vorname, DiW.Bezeichnung, DiW.Hersteller, DiW.ID as Dienstwagen, mi.abeitlung
+		FROM mitarbeiter mi
+	LEFT JOIN Dienstwagen DiW on mi.mitarbeiterID = DiW.Id
+		WHERE mi.abteilung <= 5 or MI.abteilung is Null;

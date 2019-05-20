@@ -1,6 +1,6 @@
 Übung 1:
 
-1) wahr
+1) falsch
 2) wahr
 3) wahr
 4) falsch
@@ -11,8 +11,8 @@
 
 1 select Kennzeichen, Bezeichnung  // es fehlt aus welcher tabelle
 2   from Fahrzeug fz
-3        left join Fahrzeugtyp ft on fz.Fahrzeugtyp_ID = ft.ID
-4  where fz.ID <= 20 ;
+3        left join Fahrzeugtyp ft on fz.Fahrzeugtyp_ID = ft.ID // die tabllen tauschen oder right join machen
+4  where fz.ID <= 20 or FZ.ID is Null;
 --------------------------------------------------------------------------
 Übung 3:
 
@@ -31,14 +31,13 @@ JOIN  hersteller herst ON herst.ID = dw.Fahrzeugtyp_ID;
 
 SELECT 	mi.mitarbeiterID AS Mitarbeiter,
 	DiW.ID as Dienstwagen, mi.abeitlung
-	FROM Dienstwagen DiW
-left join mitarbeiter mi on mi.mitarbeiterID = DiW.Id
-where mi.abteilung <= 5 ;
+FROM Dienstwagen DiW
+left join mitarbeiter mi on mi.mitarbeiterID = DiW.Id;
 --------------------------------------------------------------------------
 Übung 6:
 
 SELECT k.Name, k.Vorname
-	FROM Versicherungsgesellschaften k  
+FROM Versicherungsgesellschaften k  
 left JOIN Versicherungskunde vk ON vk.kunde_ID = k.id
 where k.Name like 'S%';
 --------------------------------------------------------------------------
@@ -46,12 +45,32 @@ where k.Name like 'S%';
 
 SELECT 	mi.mitarbeiterID AS Mitarbeiter,
 	DiW.ID as Dienstwagen, mi.abeitlung
-	FROM mitarbeiter mi
-left join Dienstwagen DiW on mi.mitarbeiterID = DiW.Id
-where mi.abteilung <= 5 ;
+FROM mitarbeiter mi
+left join Dienstwagen DiW on mi.mitarbeiterID = DiW.Id;
 
 1) weil mitarbeiter zuerst gesammelt werden und dann dazu passende dienstwagen hinzugefügt werden
-2) weil alle mitarbeite gezegit werden mit oder ohne persönlichen dienstwagen
+2) weil alle mitarbeite gezeigt werden mit oder ohne persönlichen dienstwagen
 --------------------------------------------------------------------------
 Übung 8:
 
+
+SELECT 	mi.mitarbeiterID AS Mitarbeiter,
+	mi.name ,
+	mi.vorname,
+	DiW.Bezeichnung,
+	DiW.Hersteller,
+	DiW.ID as Dienstwagen, mi.abeitlung
+FROM mitarbeiter mi
+left join Dienstwagen DiW on mi.mitarbeiterID = DiW.Id
+where mi.abteilung <= 5 ;
+---------------------------------------------------------------------------
+Übung 9:
+SELECT 	mi.mitarbeiterID AS Mitarbeiter,
+	mi.name ,
+	mi.vorname,
+	DiW.Bezeichnung,
+	DiW.Hersteller,
+	DiW.ID as Dienstwagen, mi.abeitlung
+FROM mitarbeiter mi
+left join Dienstwagen DiW on mi.mitarbeiterID = DiW.Id
+where mi.abteilung <= 5 or MI.abteilung is Null ;
