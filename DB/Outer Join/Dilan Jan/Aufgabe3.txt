@@ -1,0 +1,6 @@
+Übung 3:
+
+SELECT *
+FROM Versicherung vs
+LEFT JOIN Kunden kd ON vs.ID = kd.Versicherung_ID
+	

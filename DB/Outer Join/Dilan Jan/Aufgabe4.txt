@@ -1,0 +1,8 @@
+Übung 4:
+
+SELECT *
+FROM Dienstwagen dw
+FULL JOIN Fahrzeugtyp ft
+ON dw.Fahrzeugtyp_ID = ft.ID
+LEFT JOIN Hersteller hs
+ON dw.Hersteller_ID = hs.ID;

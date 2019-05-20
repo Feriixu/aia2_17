@@ -1,0 +1,7 @@
+Übung 6:
+
+SELECT * 
+FROM Versicherung vs
+LEFT JOIN Kunde kd
+ON vs.ID = kd.Versicherung_ID
+WHERE kd.Nachname LIKE 'S%'

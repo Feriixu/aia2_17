@@ -1,0 +1,2 @@
+Übung2
+Es muss ein Right Join sein. FZ.ID <=20 or FZ.ID is Null;

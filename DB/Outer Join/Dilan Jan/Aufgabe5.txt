@@ -1,0 +1,6 @@
+Übung 5:
+SELECT *
+FROM Mitarbeiter mi
+Right JOIN Dienstwagen dw
+ON ma.ID = dw.Mitarbeiter_ID
+WHERE ma.Abteilung <= 5;

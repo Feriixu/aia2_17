@@ -34,11 +34,12 @@
 		WHERE kd.Nachname LIKE 'S%'
 	
 7)
-	SELECT 	mi.mitarbeiterID AS Mitarbeiter, DiW.ID as Dienstwagen, mi.abeitlung FROM mitarbeiter mi
-	LEFT JOIN Dienstwagen DiW on mi.mitarbeiterID = DiW.Id;
+	SELECT 	mi.mitarbeiterID AS Mitarbeiter, dw.ID as Dienstwagen, mi.abteilung FROM mitarbeiter mi
+	LEFT JOIN Dienstwagen dw on mi.mitarbeiterID = dw.Id;
 
-	1) Erst werden die Mitarbeiter hinzugefügt und erst dann passende Dienstwagen angezeigt
-	2) Durch den Join werden alle Mitarbeiter angezeigt, egal ob mit oder ohne Dienstwagen
+	1) Erst werden alle Mitarbeiter aufgelistet und dann passende Dienstwagen angezeigt
+	2) Durch den Join werden alle Mitarbeiter angezeigt, 
+	   egal ob mit oder ohne Dienstwagen, jedoch nicht alle Dienstwagen
 
 8)
 	SELECT 	mi.mitarbeiterID AS Mitarbeiter, mi.name, mi.vorname, DiW.Bezeichnung, DiW.Hersteller, DiW.ID as Dienstwagen, mi.abeitlung 

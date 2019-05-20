@@ -37,20 +37,21 @@ Aufgabe 4:
 
 select wg.Fahrzeugtyp, wg.Hersteller
 from Dienstwagen dw
-left join Wagen wg on wg.ID = dw.ID;
+right join Wagen wg on wg.ID = dw.ID;
 
 Aufgabe 5:
 
 select ma.Name, ma.ID as MITARBEITER, wg.Bezeichnung
 from Wagen wg
-left join MITARBEITER ma on ma.ID = wg.ID;
+left join MITARBEITER ma on ma.ID = wg.ID
+where ma.ID <=5 or ma.ID is null;
 
 Aufgabe 6:
 
 select knd.Name, knd.Nachname
 from Versicherungsgesellschaft vg
-left join Kunde knd on knd.ID = vg.VGID;
-where knd.Nachname = 'S%';
+full join Kunde knd on knd.ID = vg.VGID;
+where knd.Nachname = 'S%' or knd.ID = null;
 
 Aufgabe 7:
 
@@ -60,7 +61,12 @@ nicht angezeigt wurden.
 
 Die Dienstwagen fehlen, weil nicht mehr auf diese geprüft wird.
 
-Aufgabe 8:
+Aufgabe 8(MITSCHRIFT):
 
+MI(Mitarbeiter), DW(Dienstwagen), FT(Fahrzeugtyp),
+FH(Hersteller)
+
+select ma.Name, ma.Vorname, dw.Bezeichn, fh.name
+from 
 
 
