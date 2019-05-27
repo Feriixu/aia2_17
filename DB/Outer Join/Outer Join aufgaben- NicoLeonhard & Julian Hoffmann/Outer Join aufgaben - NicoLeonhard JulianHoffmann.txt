@@ -64,8 +64,8 @@ SELECT 	mi.mitarbeiterID AS Mitarbeiter,
 	Ft.typ
 FROM mitarbeiter mi
 left join Dienstwagen DiW on mi.mitarbeiterID = DiW.Id
-full join Fahrzeugtyp ft on DiW.Id = ft.ID
-right join Hersteller Hs on ft.ID = hs.ID
+right join Fahrzeugtyp ft on DiW.Id = ft.ID
+inner join Hersteller Hs on ft.ID = hs.ID
 
 ---------------------------------------------------------------------------
 Übung 9:
