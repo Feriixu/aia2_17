@@ -1,0 +1,61 @@
+create table if not exists Kunde
+(
+	kundeid INTEGER,
+	PRIMARY key(kundeid),
+	vorname varchar(255),
+	nachname varchar(255),
+	anschrift varchar(255)
+);
+
+create table if not exists Fachgebiet
+(
+	fachgebiet varchar(255),
+	PRIMARY key(fachgebiet)
+);
+
+create table if not exists Rechnung
+(
+	rechnungsid integer,
+	PRIMARY key(rechnungsid),
+	kosten double,
+	bezeichnung varchar(255),
+	firmenanschrift varchar(255)
+);
+
+create table if not exists kfzmechaniker
+(
+	mechanikerid integer,
+	PRIMARY key(mechanikerid),
+	fachgebiet varchar(255),
+	FOREIGN key(fachgebiet) REFERENCES Fachgebiet(fachgebiet),
+	vorname varchar(255),
+	nachname varchar(255)
+);
+
+create table if not exists Auto
+(
+	autoid integer,
+	PRIMARY key(autoid),
+	kundeid integer,
+	FOREIGN key(kundeid) REFERENCES Kunde(kundeid)
+);
+
+create table if not exists Historie
+(
+	historieid integer,
+	PRIMARY key(historieid),
+	autoid integer,
+	FOREIGN key(autoid) REFERENCES Auto(autoid),
+	datum date,
+	diagnose varchar(255)
+);
+
+create table if not exists Repariert
+(
+	reparatursid integer,
+	PRIMARY key(reparatursid),
+	rechnungsid integer,
+	FOREIGN key(rechnungsid) REFERENCES  Rechnung(rechnungsid),
+	mechanikerid INTEGER,
+	FOREIGN key(mechanikerid) REFERENCES kfzmechaniker(mechanikerid)
+);
