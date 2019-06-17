@@ -1,0 +1,65 @@
+CREATE DATABASE IF NOT EXISTS Werkstatt;
+CREATE TABLE IF NOT EXISTS Fachgebiet
+(
+	ID INT AUTO_INCREMENT,
+	PRIMARY key (ID),
+	Bezeichnung TEXT
+);
+
+CREATE TABLE IF NOT EXISTS Mechaniker
+(
+	ID INT AUTO_INCREMENT, 
+	PRIMARY KEY(ID)
+	FachgebietID INT,
+	FOREIGN KEY (FachgebietID) REFERENCES Fachgebiet(ID)
+);
+
+CREATE TABLE IF NOT EXISTS Kunde 
+(
+	ID INT AUTO_INCREMENT,
+	PRIMARY KEY (ID),
+	Name TEXT,
+	Adresse TEXT
+);
+
+CREATE TABLE IF NOT EXISTS KFZ
+(
+	ID INT AUTO_INCREMENT,
+	Bezeichnung TEXT,
+	Kennzeichen TEXT,
+	Kilometerstand INT,
+	AbgelesenAm DATETIME,
+	PRIMARY KEY (ID)
+	KundeID INT,
+	FOREIGN KEY (KundeID) REFERENCES Kunde(ID)
+);
+
+CREATE TABLE IF NOT EXISTS Rechnung
+(
+	ID INT AUTO_INCREMENT,
+	PRIMARY KEY (ID),
+	Datum DATETIME
+);
+
+CREATE TABLE IF NOT EXISTS Reparatur
+(
+	ID int AUTO_INCREMENT,
+	PRIMARY KEY (ID),
+	Diagnose TEXT,
+	KundenID INT,
+	FOREIGN KEY (KundenID) REFERENCES Kunde(ID),
+	MechanikerID INT,
+	FOREIGN KEY (MechanikerID) REFERENCES Mechaniker(ID),
+	RechnungID INT,
+	FOREIGN KEY (RechnungID) REFERENCES Rechnung(ID)
+);
+
+CREATE TABLE IF NOT EXISTS RechnungsPosition
+(
+	ID INT AUTO_INCREMENT, 
+	PRIMARY KEY (ID),
+	RechnungID INT,
+	FOREIGN KEY (RechnungID) REFERENCES Rechnung(ID),
+	Bezeichnung TEXT
+	Kosten DECIMAL(10,2)
+);
