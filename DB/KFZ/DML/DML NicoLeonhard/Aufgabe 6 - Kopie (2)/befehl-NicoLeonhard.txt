@@ -1,0 +1,7 @@
+	select *, 
+	AS Kundealter from kunde 
+	where nachname LIKE 'K%'
+	and (DATEDIFF(curdate(), (gebdatum)) ) >= 65;	
+	Group by Kundealter
+	ORDER BY Kundealter desc;
+
