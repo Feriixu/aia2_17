@@ -1,0 +1,17 @@
+1.
+UPDATE Kunde
+SET Geburtsdatum="1980-10-1"
+WHERE Name="Maier";
+
+2.
+SELECT Name
+FROM Kunde
+WHERE YEAR(Geburtsdatum) > 1960;
+
+3.
+
+
+4.
+SELECT SUM(Kosten)
+FROM Rechnung
+WHERE Typ="Material";
