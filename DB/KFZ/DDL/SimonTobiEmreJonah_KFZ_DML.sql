@@ -1,3 +1,5 @@
+--Dieses Programm ist komplett lauffähig. Es kann direkt gestartet werden.
+
 drop database KFZ;
 create database KFZ;
 use KFZ
@@ -122,3 +124,22 @@ insert into Kunde (KundeID, Name, Stasse, Hausnummer, gebDat) values
 select count(KundeID)
 from Kunde
 where gebDat >= 1960-01-01;
+
+--Nummer 3:
+/*Das konnte beim letzten Mal schon keiner und die Tabelle
+"Rechnungsposition" haben wir hier nicht. Somit kann diese 
+Aufgabe nicht bearbeitet werden. Personal- sowie Materialkosten
+sind auch nicht vorhanden.*/
+
+--Nummer 4:
+select sum(Betrag)
+from Abrechnung
+where Rechnungsdatum between 2018-01-01 and 2018-12-31;
+
+--Nummer 5:
+/*Auch hier gibt es keine Materialkosten*/
+
+--Nummer 6:
+select KundeID, Name
+from Kunde
+where Name = 'K%' and (current_date - gebDat) >= 65; 
