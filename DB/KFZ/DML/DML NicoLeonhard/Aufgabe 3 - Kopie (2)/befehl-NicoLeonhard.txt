@@ -1,3 +1,0 @@
-select * from rechnungen;
-
-und dann selber ausrechnen

@@ -1,2 +1,0 @@
-select gespreis from rechnung
-where datum between "2017-01-01" and "2018-12-31" ;

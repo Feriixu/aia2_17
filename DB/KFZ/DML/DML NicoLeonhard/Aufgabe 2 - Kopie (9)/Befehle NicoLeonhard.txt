@@ -1,2 +1,0 @@
-select * from kunde
-where (geburtstag >= "1980-10-01");
