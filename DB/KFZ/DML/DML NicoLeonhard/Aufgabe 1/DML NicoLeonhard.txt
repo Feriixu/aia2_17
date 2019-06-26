@@ -2,7 +2,7 @@ delete from kunde;
 insert into kunde
 	(kundeid,vorname,nachname,anschrift,geburtstag)
 values	(1,"","Maier","","1980-10-01"),
-	(2,"Nico","Leonhard","","2000-11-16"),
+	(2,"Nico","Dummhard","","2000-11-16"),
 	(3,"Jeff","anderson","","0000-00-00")
 
 insert into 

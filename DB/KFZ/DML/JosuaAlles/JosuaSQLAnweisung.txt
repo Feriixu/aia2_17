@@ -31,10 +31,7 @@ Aufgabenstellung:
 "Erstellen Sie eine SQL-Anweisung, welche die Summe 
  der Materialkosten aller Rechnungen für das Jahr 2018 berechnet."
 
-Die "Materialkosten werden in der Ausgangssituation nicht erwähnt.
-
-Bitte entschuldigen Sie mir die Frage aber
-lesen Sie sich ihre eigenen Aufgaben durch ?
+Die "Materialkosten" werden in der Ausgangssituation nicht erwähnt.
 
 So etwas dürfte nicht Passieren.
 
