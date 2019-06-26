@@ -1,4 +1,4 @@
-Ôªøalter table Kunde
+alter table Kunde
 add Alter date;
 
 1.
@@ -13,9 +13,7 @@ where Alter >= "1960-01-01";
 
 3.
 Sie stellen DIESELBE Aufgabe wie bei der DM-Datebank,
-die wir augrund der unverst√§ndlichen Aufgabenstellung nicht l√∂sen konnten.
-(und nicht gemeinsam besprochen haben)
-Also warum stellen Sie sie nochmal ? Vollkommen unverst√§ndlich.
+die wir augrund der unverst‰ndlichen Aufgabenstellung nicht lˆsen konnten.
 
 4.
 Select Sum(Kosten)
@@ -24,19 +22,14 @@ where RechnungsDatum >= "2018-01-01";
 
 5.
 Aus der Ausgangssituation: 
-"Die Abrechnung enth√§lt das Rechnungsdatum und den Reparaturzeitraum,
+"Die Abrechnung enth‰lt das Rechnungsdatum und den Reparaturzeitraum,
  sowie die einzelnen Abrechnungspositionen. 
 
 Aufgabenstellung: 
 "Erstellen Sie eine SQL-Anweisung, welche die Summe 
- der Materialkosten aller Rechnungen f√ºr das Jahr 2018 berechnet."
+ der Materialkosten aller Rechnungen f¸r das Jahr 2018 berechnet."
 
-Die "Materialkosten werden in der Ausgangssituation nicht erw√§hnt.
-
-Bitte entschuldigen Sie mir die Frage aber
-lesen Sie sich ihre eigenen Aufgaben durch ?
-
-So etwas d√ºrfte nicht Passieren.
+Die Materialkosten werden in der Ausgangssituation nicht erw‰hnt.
 
 Dennoch 5.
 Select Sum(Materialkosten)
